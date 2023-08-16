@@ -1,11 +1,12 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./build/*.html", "./build/js/*.js"],
+  // content: ["./build/**/*.{html,js}"],  // This is the way showed in docs and it will help in bigger repos
+  content: ["./build/*.html", "./build/js/*.js"],  
   theme: {
     extend: {
       screens: {
         'widescreen': { 'raw': '(min-aspect-ratio: 3/2)' },
-        'tallscreen': { 'raw': '(min-width-ratio: 13/20)' },
+        'tallscreen': { 'raw': '(max-aspect-ratio: 13/20)' },
       },
       keyframes: {
         'open-menu': {
